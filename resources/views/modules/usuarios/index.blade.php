@@ -3,31 +3,50 @@
 @section('content')
 
     <div class="container">
-
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="col-1">
-                            <input type="checkbox" value="">
-                        </th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="row m-1">
+            <div class="col-p1 m-3 bck-tab">
+                <div class="table-responsive">
+                    <div class="pt-3 pl-3 pr-3">
+                        <h3><b>USUARIOS</b></h3>
+                    </div>
+                    <div class="p-3">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nombres</th>
+                                    <th>Apellidos</th>
+                                    <th>Numero de Cedula</th>
+                                    <th>Ciudad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($usuarios as $usu)
+                                <tr>
+                                    <td><a href="{{ route('usuarios.show', $usu -> id) }}">{{ $usu -> primerNombre }} {{ $usu -> segundoNombre }}</a></td>
+                                    <td>{{ $usu -> apellidos }}</td>
+                                    <td>{{ $usu -> numeroCedula }}</td>
+                                    <td>{{ $usu -> ciudad }}</td>
+                                    <td class="frm-delete">
+                                        <form action="{{ route('usuarios.delete', $usu -> id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-link"><i class="fas fa-user-times text-danger"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-p2 p-2 m-3 text-center bck-tab">
+                <hr>
+                <a class="btn btn-add btn-lg btn-block" href="{{ route('usuarios.create') }}">AGREGAR &nbsp; <i class="fas fa-plus-circle"></i></a>
+                <hr>
+            </div>
         </div>
-
     </div>
 
 @endsection

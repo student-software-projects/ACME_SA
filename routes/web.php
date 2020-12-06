@@ -19,4 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//USUARIOS
 Route::get('usuarios', [usuariosController::class, 'index'])->name('usuarios.index');
+Route::get('usuarios/create', [usuariosController::class, 'create'])->name('usuarios.create');
+Route::post('usuarios', [usuariosController::class, 'store'])->name('usuarios.store');
+Route::get('usuarios/edit/{id}', [usuariosController::class, 'edit'])->name('usuarios.edit');
+Route::put('usuarios/{id}', [usuariosController::class, 'update'])->name('usuarios.update');
+Route::get('usuarios/show/{id}', [usuariosController::class, 'show'])->name('usuarios.show');
+Route::delete('usuarios/{id}', [usuariosController::class, 'delete'])->name('usuarios.delete');
+
+
+//VEHICULOS
