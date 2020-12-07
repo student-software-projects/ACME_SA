@@ -32,6 +32,7 @@
 @include('layouts.admin.components.navbar')
 
 @yield('content')
+@yield('content_vh')
 
 @include('layouts.admin.components.footer')
 </body>
