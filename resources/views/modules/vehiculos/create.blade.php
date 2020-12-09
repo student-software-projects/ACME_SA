@@ -37,8 +37,10 @@
                     <select name="usuario_con" id="usuario_con">
                         <option value="">Seleccione...</option>
                         @foreach($usuarios as $usu)
+                            @if($usu->tipoUsuarios_id == 1 OR $usu->tipoUsuarios_id == 3)
                             <option
                                 value="{{$usu->id}}">{{ $usu -> primerNombre }} {{ $usu -> segundoNombre }} {{ $usu -> apellidos }}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -49,8 +51,10 @@
                 <select name="usuario_pro" id="usuario_pro">
                     <option value="">Seleccione...</option>
                     @foreach($usuarios as $usu)
+                        @if($usu->tipoUsuarios_id == 2 OR $usu->tipoUsuarios_id == 3)
                         <option
                             value="{{$usu->id}}">{{ $usu -> primerNombre }} {{ $usu -> segundoNombre }} {{ $usu -> apellidos }}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>

@@ -14,12 +14,14 @@ class vehiculosController extends Controller
         $vehiculos = vehiculos::all();
         $usuarios = usuarios::all();
         $tipovehi = tipoVehiculos::all();
-        return view('modules.vehiculos.index', compact('vehiculos'), compact('usuarios'), compact('tipovehi'));
+        return view('modules.vehiculos.index', compact('vehiculos','usuarios','tipovehi'));
     }
 
     public function show($id){
         $vehiculos = vehiculos::find($id);
-        return view('modules.vehiculos.show', compact('vehiculos'));
+        $tipovehi = tipoVehiculos::all();
+        $usuarios = usuarios::all();
+        return view('modules.vehiculos.show', compact('vehiculos','tipovehi','usuarios'));
     }
 
     public function create(){
@@ -29,15 +31,17 @@ class vehiculosController extends Controller
     }
 
     public function store (Request $request){
+
         $vehiculos = vehiculos::create($request->all());
         return redirect()->route('vehiculos.index');
+
     }
 
     public function edit ($id){
         $vehiculos = vehiculos::find($id);
         $usuarios = usuarios::all();
         $tipovehi = tipoVehiculos::all();
-        return view('modules.vehiculos.edit', compact('vehiculos'), compact('usuarios'),compact('tipovehi'));
+        return view('modules.vehiculos.edit', compact('vehiculos','usuarios','tipovehi'));
     }
 
     public function update(Request $request, $id){
