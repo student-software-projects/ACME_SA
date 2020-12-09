@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
-    <title>Document</title>
+    <title>ACME SA</title>
     <style>
         body{background-color: #e9e9e9;}
         .container{min-height: calc(100vh - 6.5em - 3em)}

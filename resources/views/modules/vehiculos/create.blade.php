@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="tipoVehiculos_id">Tipo de Vehiculo</label>
-                    <select name="tipoVehiculos_id" id="tipoVehiculos_id">
+                    <select class="custom-select" name="tipoVehiculos_id" id="tipoVehiculos_id">
                         <option value="">Seleccione...</option>
                         @foreach($tipovehi as $vtype)
                             <option
@@ -34,7 +34,7 @@
 
                 <div class="form-group col-md-4">
                     <label for="usuario_con">Conductor</label>
-                    <select name="usuario_con" id="usuario_con">
+                    <select class="custom-select" name="usuario_con" id="usuario_con">
                         <option value="">Seleccione...</option>
                         @foreach($usuarios as $usu)
                             @if($usu->tipoUsuarios_id == 1 OR $usu->tipoUsuarios_id == 3)
@@ -48,7 +48,7 @@
 
             <div class="form-group">
                 <label for="usuario_pro">Propietario</label>
-                <select name="usuario_pro" id="usuario_pro">
+                <select class="custom-select" name="usuario_pro" id="usuario_pro">
                     <option value="">Seleccione...</option>
                     @foreach($usuarios as $usu)
                         @if($usu->tipoUsuarios_id == 2 OR $usu->tipoUsuarios_id == 3)
