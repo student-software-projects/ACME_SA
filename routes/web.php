@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usuariosController;
 use App\Http\Controllers\vehiculosController;
+use App\Http\Controllers\reportesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,7 @@ Route::get('vehiculos/edit/{id}', [vehiculosController::class, 'edit'])->name('v
 Route::put('vehiculos/{id}', [vehiculosController::class, 'update'])->name('vehiculos.update');
 Route::get('vehiculos/show/{id}', [vehiculosController::class, 'show'])->name('vehiculos.show');
 Route::delete('vehiculos/{id}', [vehiculosController::class, 'delete'])->name('vehiculos.delete');
+
+//REPORTE
+Route::get('repote',[reportesController::class,'reporte'])->name('reporte.index');
+
