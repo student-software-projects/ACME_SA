@@ -37,8 +37,8 @@
                     <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $usuarios -> direccion }}">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="apellidos">Apellidos</label>
-                    <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{ $usuarios -> apellidos }}">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $usuarios -> telefono }}">
                 </div>
             </div>
             <div class="form-group">
