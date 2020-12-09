@@ -30,10 +30,10 @@ Route::delete('usuarios/{id}', [usuariosController::class, 'delete'])->name('usu
 
 
 //VEHICULOS
-Route::get('vehiculos', [usuariosController::class, 'index'])->name('vehiculos.index');
-Route::get('vehiculos/create', [usuariosController::class, 'create'])->name('vehiculos.create');
-Route::post('vehiculos', [usuariosController::class, 'store'])->name('vehiculos.store');
-Route::get('vehiculos/edit/{id}', [usuariosController::class, 'edit'])->name('vehiculos.edit');
-Route::put('vehiculos/{id}', [usuariosController::class, 'update'])->name('vehiculos.update');
-Route::get('vehiculos/show/{id}', [usuariosController::class, 'show'])->name('vehiculos.show');
-Route::delete('vehiculos/{id}', [usuariosController::class, 'delete'])->name('vehiculos.delete');
+Route::get('vehiculos', [vehiculosController::class, 'index'])->name('vehiculos.index');
+Route::get('vehiculos/create', [vehiculosController::class, 'create'])->name('vehiculos.create');
+Route::post('vehiculos', [vehiculosController::class, 'store'])->name('vehiculos.store');
+Route::get('vehiculos/edit/{id}', [vehiculosController::class, 'edit'])->name('vehiculos.edit');
+Route::put('vehiculos/{id}', [vehiculosController::class, 'update'])->name('vehiculos.update');
+Route::get('vehiculos/show/{id}', [vehiculosController::class, 'show'])->name('vehiculos.show');
+Route::delete('vehiculos/{id}', [vehiculosController::class, 'delete'])->name('vehiculos.delete');

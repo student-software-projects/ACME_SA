@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('content_vh')
+@section('content')
 
     <div class="container">
         <div class="row m-1">

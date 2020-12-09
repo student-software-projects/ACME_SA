@@ -15,7 +15,7 @@
         .checkbox{border-radius: 5px}
         .title-header{background-color: #ffffff; height: 4.5em; padding: 1em; margin-bottom: 2em}
         .col-p1{width: 68%;}.col-p2{width: 25%;}.col-p3{width: 15%;}
-        .bck-tab{background-color: #ffffff; border-radius: 7px}
+        .bck-tab{background-color: #ffffff; border-radius: 7px; height: 100%;}
         div.table-responsive > table.table-bordered{border-radius: 5px}
         .frm-delete > form > button.btn{padding: 0 !important;}
         .btn-add{color: #ffffff; border-color: #5ac517; background: linear-gradient(to bottom, #5ac517 1%, #379608 100%); font-size: 1.1rem; font-weight: bold;}
@@ -32,7 +32,6 @@
 @include('layouts.admin.components.navbar')
 
 @yield('content')
-@yield('content_vh')
 
 @include('layouts.admin.components.footer')
 </body>
