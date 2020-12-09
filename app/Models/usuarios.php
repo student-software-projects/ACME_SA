@@ -19,6 +19,7 @@ class usuarios extends Model
         'direccion',
         'telefono',
         'ciudad',
+        'tipoUsuarios_id'
     ];
 
 }

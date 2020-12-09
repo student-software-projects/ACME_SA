@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label for="direccion">Dirección</label>
-                <input type="text" class="form-control" id="direccion" name="direccion">
+                v1.3                <input type="text" class="form-control" id="direccion" name="direccion">
             </div>
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
