@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tipoVehiculos;
 use App\Models\usuarios;
 use App\Models\vehiculos;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Compound;
 
 class vehiculosController extends Controller
 {
     public function index(){
         $vehiculos = vehiculos::all();
         $usuarios = usuarios::all();
-        return view('modules.vehiculos.index', compact('vehiculos'), compact('usuarios'));
+        $tipovehi = tipoVehiculos::all();
+        return view('modules.vehiculos.index', compact('vehiculos'), compact('usuarios'), compact('tipovehi'));
     }
 
     public function show($id){
@@ -21,7 +24,8 @@ class vehiculosController extends Controller
 
     public function create(){
         $usuarios = usuarios::all();
-        return view('modules.vehiculos.create',compact('usuarios'));
+        $tipovehi = tipoVehiculos::all();
+        return view('modules.vehiculos.create',compact('usuarios'), compact('tipovehi'));
     }
 
     public function store (Request $request){
@@ -32,7 +36,8 @@ class vehiculosController extends Controller
     public function edit ($id){
         $vehiculos = vehiculos::find($id);
         $usuarios = usuarios::all();
-        return view('modules.vehiculos.edit', compact('vehiculos'), compact('usuarios'));
+        $tipovehi = tipoVehiculos::all();
+        return view('modules.vehiculos.edit', compact('vehiculos'), compact('usuarios'),compact('tipovehi'));
     }
 
     public function update(Request $request, $id){

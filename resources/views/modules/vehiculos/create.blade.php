@@ -22,17 +22,31 @@
                     <input type="text" class="form-control" id="marca" name="marca">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="tipoVehiculo">Tipo de Vehiculo</label>
-                    <input type="text" class="form-control" id="tipoVehiculo" name="tipoVehiculo">
+                    <label for="tipoVehiculos_id">Tipo de Vehiculo</label>
+                    <select name="tipoVehiculos_id" id="tipoVehiculos_id">
+                        <option value="">Seleccione...</option>
+                        @foreach($tipovehi as $vtype)
+                            <option
+                                value="{{$vtype->id}}">{{ $vtype -> descTipoVehiculos }}</option>
+                        @endforeach
+                    </select>
                 </div>
+
                 <div class="form-group col-md-4">
-                    <label for="conductor">Conductor</label>
-                    <input type="text" class="form-control" id="conductor" name="conductor">
+                    <label for="usuario_con">Conductor</label>
+                    <select name="usuario_con" id="usuario_con">
+                        <option value="">Seleccione...</option>
+                        @foreach($usuarios as $usu)
+                            <option
+                                value="{{$usu->id}}">{{ $usu -> primerNombre }} {{ $usu -> segundoNombre }} {{ $usu -> apellidos }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
+
             <div class="form-group">
-                <label for="usuarios_id">Propietario</label>
-                <select name="usuarios_id" id="usuarios_id">
+                <label for="usuario_pro">Propietario</label>
+                <select name="usuario_pro" id="usuario_pro">
                     <option value="">Seleccione...</option>
                     @foreach($usuarios as $usu)
                         <option

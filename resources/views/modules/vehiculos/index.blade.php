@@ -15,6 +15,7 @@
                             <tr>
                                 <th>PLACA</th>
                                 <th>COLOR</th>
+                                <th>MARCA</th>
                                 <th>TIPO DE VEHICULO</th>
                                 <th>CONDUCTOR</th>
                                 <th>PROPIETARIO</th>
@@ -27,11 +28,22 @@
                                     <td><a href="{{ route('vehiculos.show', $vh -> id) }}">{{ $vh -> placa }}</a></td>
                                     <td>{{ $vh -> color }}</td>
                                     <td>{{ $vh -> marca }}</td>
-                                    <td>{{ $vh -> tipoVehiculo }}</td>
-                                    <td>{{ $vh -> conductor }}</td>
+
+                                    @foreach($tipovehi as $vtype)
+                                        @if($vtype->id == $vh->tipoVehiculos_id)
+                                            <td>{{ $vtype -> descTipoVehiculos }}</td>
+                                        @endif
+                                    @endforeach
+
                                     @foreach($usuarios as $usu)
-                                        @if($vh->usuarios_id == $usu->id)
-                                            <td>{{ $usu -> numeroCedula }}</td>
+                                        @if($vh->usuario_con == $usu->id)
+                                            <td>{{ $usu -> primerNombre }},{{ $usu -> apellidos }}</td>
+                                        @endif
+                                    @endforeach
+
+                                    @foreach($usuarios as $usu)
+                                        @if($vh->usuario_pro == $usu->id)
+                                            <td>{{ $usu -> primerNombre }},{{ $usu -> apellidos }}</td>
                                         @endif
                                     @endforeach
                                     <td class="frm-delete">
