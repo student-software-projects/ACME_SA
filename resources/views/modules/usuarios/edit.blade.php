@@ -39,6 +39,15 @@
                 <label for="telefono">Teléfono</label>
                 <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $usuarios -> telefono }}">
             </div>
+            <div class="form-group">
+                <label for="tipoUsuarios_id">Tipo de Usuario</label>
+                <select class="custom-select" name="tipoUsuarios_id" id="tipoUsuarios_id">
+                    <option value="">Seleccione...</option>
+                    @foreach($tipo_usu as $i)
+                        <option value="{{ $i -> id }}">{{ $i -> descTipoUsu }}</option>
+                    @endforeach
+                </select>
+            </div>
             <hr>
             <a href="{{ route('usuarios.index') }}" class="btn btn-check mr-2"><i class="fas fa-arrow-circle-left"></i> &nbsp; VOLVER</a>
             <button type="submit" class="btn btn-add ml-2">CONFIRMAR &nbsp; <i class="fas fa-check-circle"></i></button>

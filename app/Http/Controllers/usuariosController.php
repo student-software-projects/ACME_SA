@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\usuarios;
 use Illuminate\Http\Request;
+use App\Models\tipoUsuarios;
 
 class usuariosController extends Controller
 {
@@ -12,13 +13,15 @@ class usuariosController extends Controller
     public function index()
     {
         $usuarios = usuarios::all();
-        return view('modules.usuarios.index', compact('usuarios'));
+        $tipo_usu = tipoUsuarios::all();
+        return view('modules.usuarios.index', compact('usuarios', 'tipo_usu'));
     }
 
     public function create()
     {
         $usuarios = usuarios::all();
-        return view('modules.usuarios.create');
+        $tipo_usu = tipoUsuarios::all();
+        return view('modules.usuarios.create', compact('tipo_usu'));
     }
 
     public function store(Request $request)
