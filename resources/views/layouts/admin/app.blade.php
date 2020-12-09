@@ -34,5 +34,6 @@
 @yield('content')
 
 @include('layouts.admin.components.footer')
+
 </body>
 </html>

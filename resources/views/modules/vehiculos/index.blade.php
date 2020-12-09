@@ -37,13 +37,13 @@
 
                                     @foreach($usuarios as $usu)
                                         @if($vh->usuario_con == $usu->id)
-                                            <td>{{ $usu -> primerNombre }},{{ $usu -> apellidos }}</td>
+                                            <td>{{ $usu -> primerNombre }} {{ $usu -> apellidos }}</td>
                                         @endif
                                     @endforeach
 
                                     @foreach($usuarios as $usu)
                                         @if($vh->usuario_pro == $usu->id)
-                                            <td>{{ $usu -> primerNombre }},{{ $usu -> apellidos }}</td>
+                                            <td>{{ $usu -> primerNombre }} {{ $usu -> apellidos }}</td>
                                         @endif
                                     @endforeach
                                     <td class="frm-delete">

@@ -29,13 +29,25 @@
                     <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{ $usuarios -> apellidos }}" disabled>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="direccion">Dirección</label>
-                <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $usuarios -> direccion }}" disabled>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $usuarios -> direccion }}" disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $usuarios -> telefono }}" disabled>
+                </div>
             </div>
             <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $usuarios -> telefono }}" disabled>
+                <label for="tipoUsuarios_id">Tipo de Usuario</label>
+                <select class="custom-select" name="tipoUsuarios_id" id="tipoUsuarios_id" disabled>
+                    @foreach($tipo_usu as $i)
+                        @if($i->id == $usuarios->tipoUsuarios_id)
+                            <option value="{{ $i -> id }}">{{ $i -> descTipoUsu }}</option>
+                        @endif
+                    @endforeach
+                </select>
             </div>
             <hr>
             <a href="{{ route('usuarios.index') }}" class="btn btn-check mr-2"><i class="fas fa-arrow-circle-left"></i> &nbsp; VOLVER</a>

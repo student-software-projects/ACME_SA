@@ -31,18 +31,25 @@
                     <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{ $usuarios -> apellidos }}">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="direccion">Dirección</label>
-                <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $usuarios -> direccion }}">
-            </div>
-            <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $usuarios -> telefono }}">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $usuarios -> direccion }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{ $usuarios -> apellidos }}">
+                </div>
             </div>
             <div class="form-group">
                 <label for="tipoUsuarios_id">Tipo de Usuario</label>
                 <select class="custom-select" name="tipoUsuarios_id" id="tipoUsuarios_id">
-                    <option value="">Seleccione...</option>
+                    @foreach($tipo_usu as $i)
+                        @if($i->id == $usuarios->tipoUsuarios_id)
+                            <option value="{{ $i -> id }}">{{ $i -> descTipoUsu }}</option>
+                        @endif
+                    @endforeach
+                    <option value="">----------------</option>
                     @foreach($tipo_usu as $i)
                         <option value="{{ $i -> id }}">{{ $i -> descTipoUsu }}</option>
                     @endforeach

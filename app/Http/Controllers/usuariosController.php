@@ -33,7 +33,8 @@ class usuariosController extends Controller
     public function edit($id)
     {
         $usuarios = usuarios::find($id);
-        return view('modules.usuarios.edit', compact('usuarios'));
+        $tipo_usu = tipoUsuarios::all();
+        return view('modules.usuarios.edit', compact('usuarios', 'tipo_usu'));
     }
 
     public function update(Request $request, $id)
@@ -45,7 +46,8 @@ class usuariosController extends Controller
     public function show($id)
     {
         $usuarios = usuarios::find($id);
-        return view('modules.usuarios.show', compact('usuarios'));
+        $tipo_usu = tipoUsuarios::all();
+        return view('modules.usuarios.show', compact('usuarios', 'tipo_usu'));
     }
 
     public function delete($id)

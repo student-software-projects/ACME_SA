@@ -9,7 +9,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="placa">Placa</label>
-                    <input type="" class="form-control" id="placa" name="placa">
+                    <input type="text" class="form-control" id="placa" name="placa">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="color">Color</label>
