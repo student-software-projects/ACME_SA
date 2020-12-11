@@ -1,4 +1,4 @@
-<div class="title-header">
+<div class="header">
     <header class="container">
         <div>
             <div class="float-left">
@@ -7,7 +7,7 @@
                 <a href="{{ route('reporte.index') }}" class="btn btn-primary">Reportes <i class="fas fa-chart-bar"></i></a>
             </div>
             <div class="float-right">
-                <a href="" class="btn btn-outline-danger">CERRAR SESIÓN &nbsp; <i class="fas fa-sign-out-alt"></i></a>
+                <!--<a href="" class="btn btn-outline-danger">CERRAR SESIÓN &nbsp; <i class="fas fa-sign-out-alt"></i></a>-->
             </div>
         </div>
     </header>

@@ -17,7 +17,7 @@ use App\Http\Controllers\reportesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('modules.index.index');
 });
 
 //USUARIOS
@@ -40,5 +40,5 @@ Route::get('vehiculos/show/{id}', [vehiculosController::class, 'show'])->name('v
 Route::delete('vehiculos/{id}', [vehiculosController::class, 'delete'])->name('vehiculos.delete');
 
 //REPORTE
-Route::get('repote',[reportesController::class,'reporte'])->name('reporte.index');
+Route::get('reportes',[reportesController::class,'reporte'])->name('reporte.index');
 
